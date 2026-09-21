@@ -1,4 +1,4 @@
-/* Raees Builder App v2 - core: theme, translations, helpers, icons, shared UI */
+/* Raees Builder Rangpur App v2 - core: theme, translations, helpers, icons, shared UI */
 /* classic script (Babel react preset) - all top level names are global */
 
 var NL = String.fromCharCode(10);
@@ -88,7 +88,7 @@ var TRANSLATIONS = {
   en: {
     purchasedFrom: "Kis se liya? (factory)", ownFactory: "Apni factory (khud banaya)", ratePerPiece: "Rate (fi piece)", purchaseTotal: "Kul raqam (Rs)", purchaseNote: "Ye maal is supplier ke ledger mein jama ho jayega — cement nahi poochi jayegi.", newSupplierName: "Nayi factory ka naam", stockBought: "Kharida",
     cementPromptTitle: "Cement darj karein", cementPendingBanner: "In stock entries par cement darj nahi hui", cementAskLine: "Ab tak jo stock add hua, us par kitni cement (bag) lagi?", laterBtn: "Baad mein", cementReminderToast: "Yaad dahani: stock ki cement darj karein", cementBlocked: "Reminder ignore ho chuka — cement darj kiye baghair aage kaam nahi ho sakta.", saveCementBtn: "Cement save karein", cementSaved: "Cement darj ho gayi", cementForCat: "Cement (bag)", cementSkipZero: "Agar cement nahi lagi to 0 likhein",
-    appName: "Raees Builder", tagline: "جو نام ہے اعتماد کا",
+    appName: "Raees Builder Rangpur", tagline: "جو نام ہے اعتماد کا",
     navSale: "New Sale", navStock: "Stock", navDues: "Dues", navSettings: "Settings", navSupplier: "Supplier",
     navBills: "Bills", billsSummary: "Bills record", billsCount: "Bills",
     billsTotal: "Total amount", billsReceived: "Received", billsDue: "Balance (Baqi)", noBills: "No bills yet.",

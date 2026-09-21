@@ -1,4 +1,4 @@
-/* Raees Builder App v2 - tabs: sale, stock, wastage, dues, gate pass, settings */
+/* Raees Builder Rangpur App v2 - tabs: sale, stock, wastage, dues, gate pass, settings */
 
 function blankRow(mode) {
   var base = { id: rbUid(), category: "custom", variant: "", desc: "", qty: 1, rate: "" };

@@ -1,4 +1,4 @@
-/* Raees Builder App - Settings tab */
+/* Raees Builder Rangpur App - Settings tab */
 
 RB.SettingsTab = function (c) {
   var t = c.t;

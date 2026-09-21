@@ -1,4 +1,4 @@
-/* Raees Builder - PWA bootstrap: service worker + install button */
+/* Raees Builder Rangpur - PWA bootstrap: service worker + install button */
 (function () {
   'use strict';
 
@@ -6,7 +6,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('sw.js').catch(function (err) {
-        console.warn('Raees Builder: service worker not registered.', err);
+        console.warn('Raees Builder Rangpur: service worker not registered.', err);
       });
     });
   }
@@ -42,8 +42,8 @@
       /* iOS and some browsers have no prompt API - show the manual steps. */
       alert(
         isIos
-          ? 'To install Raees Builder: tap the Share button, then choose "Add to Home Screen".'
-          : 'To install Raees Builder: open your browser menu, then choose "Install app" or "Add to Home screen".'
+          ? 'To install Raees Builder Rangpur: tap the Share button, then choose "Add to Home Screen".'
+          : 'To install Raees Builder Rangpur: open your browser menu, then choose "Install app" or "Add to Home screen".'
       );
     });
   }

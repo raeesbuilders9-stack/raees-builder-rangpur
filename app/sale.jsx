@@ -1,4 +1,4 @@
-/* Raees Builder App - New Sale tab, item picker, bill */
+/* Raees Builder Rangpur App - New Sale tab, item picker, bill */
 
 RB.itemLabel = function (it) {
   if (!it) return "";
@@ -46,7 +46,7 @@ RB.BillView = function (p) {
   return (
     <div className="rb-bill" id={p.domId}>
       <div className="rb-bill__h">
-        <b>{st.shopName || "Raees Builder"}</b>
+        <b>{st.shopName || "Raees Builder Rangpur"}</b>
         <small>{st.addr}</small>
         <small>{st.phone}</small>
       </div>
@@ -92,7 +92,7 @@ RB.BillView = function (p) {
 
 RB.saleText = function (t, s, st) {
   var L = [];
-  L.push(st.shopName || "Raees Builder");
+  L.push(st.shopName || "Raees Builder Rangpur");
   L.push(t.billNo + ": " + s.serial + "   " + RB.dmy(s.date));
   if (s.cust) L.push(t.customer + ": " + s.cust);
   L.push("--------------------");

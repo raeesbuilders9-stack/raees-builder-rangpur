@@ -1,11 +1,11 @@
-/* Raees Builder App - Gate Pass tab */
+/* Raees Builder Rangpur App - Gate Pass tab */
 
 RB.PassView = function (p) {
   var t = p.t, g = p.pass, st = p.settings;
   return (
     <div className="rb-bill" id={p.domId}>
       <div className="rb-bill__h">
-        <b>{st.shopName || "Raees Builder"}</b>
+        <b>{st.shopName || "Raees Builder Rangpur"}</b>
         <small>{st.addr}</small>
         <small>{st.phone}</small>
         <small style={{ fontWeight: 800, marginTop: 4 }}>{t.gatePass}</small>
@@ -35,7 +35,7 @@ RB.PassView = function (p) {
 
 RB.passText = function (t, g, st) {
   var L = [];
-  L.push(st.shopName || "Raees Builder");
+  L.push(st.shopName || "Raees Builder Rangpur");
   L.push(t.gatePass + " " + t.passNo + ": " + g.serial + "   " + RB.dmy(g.date));
   if (g.cust) L.push(t.customer + ": " + g.cust);
   if (g.vehicle) L.push(t.vehicle + ": " + g.vehicle);

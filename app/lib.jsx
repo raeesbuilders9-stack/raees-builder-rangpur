@@ -1,4 +1,4 @@
-/* Raees Builder App - helpers, icons and shared UI pieces */
+/* Raees Builder Rangpur App - helpers, icons and shared UI pieces */
 window.RB = window.RB || {};
 
 /* ---------- storage + helpers ---------- */

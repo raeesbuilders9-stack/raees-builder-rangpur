@@ -1,4 +1,4 @@
-/* Raees Builder - in-app live camera */
+/* Raees Builder Rangpur - in-app live camera */
 (function () {
   'use strict';
 
@@ -133,7 +133,7 @@
     if (!shot) return;
     var file = new File([shot], fileName(), { type: 'image/jpeg' });
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      navigator.share({ files: [file], title: 'Raees Builder', text: 'Site photo' })
+      navigator.share({ files: [file], title: 'Raees Builder Rangpur', text: 'Site photo' })
         .catch(function () { /* user cancelled */ });
     } else {
       alert('This browser cannot share files. Please use Save instead.');

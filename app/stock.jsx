@@ -1,4 +1,4 @@
-/* Raees Builder App - Stock tab and Wastage tab */
+/* Raees Builder Rangpur App - Stock tab and Wastage tab */
 
 /* ---------- add / edit item ---------- */
 RB.ItemModal = function (p) {

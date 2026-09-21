@@ -1,4 +1,4 @@
-/* Raees Builder - service worker */
+/* Raees Builder Rangpur - service worker */
 const CACHE = 'raees-builder-v47';
 
 const CORE_ASSETS = [

@@ -1,11 +1,11 @@
-/* Raees Builder App - Dues tab, payment collection + receipt */
+/* Raees Builder Rangpur App - Dues tab, payment collection + receipt */
 
 RB.ReceiptView = function (p) {
   var t = p.t, r = p.pay, st = p.settings;
   return (
     <div className="rb-bill" id={p.domId}>
       <div className="rb-bill__h">
-        <b>{st.shopName || "Raees Builder"}</b>
+        <b>{st.shopName || "Raees Builder Rangpur"}</b>
         <small>{st.addr}</small>
         <small>{st.phone}</small>
         <small style={{ fontWeight: 800, marginTop: 4 }}>{t.receipt}</small>
@@ -25,7 +25,7 @@ RB.ReceiptView = function (p) {
 
 RB.payText = function (t, r, st) {
   var L = [];
-  L.push(st.shopName || "Raees Builder");
+  L.push(st.shopName || "Raees Builder Rangpur");
   L.push(t.receipt + " " + t.receiptNo + ": " + r.serial + "   " + RB.dmy(r.date));
   if (r.cust) L.push(t.customer + ": " + r.cust);
   L.push(t.billNo + ": " + r.billNo);

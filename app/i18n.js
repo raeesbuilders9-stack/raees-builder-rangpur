@@ -1,10 +1,10 @@
-/* Raees Builder App - language strings (English + Urdu) */
+/* Raees Builder Rangpur App - language strings (English + Urdu) */
 window.RB = window.RB || {};
 
 RB.T = {
   en: {
     dir: "ltr",
-    appName: "Raees Builder",
+    appName: "Raees Builder Rangpur",
     sub: "Chatai Sale & Stock",
     tabSale: "New Sale", tabStock: "Stock", tabWaste: "Wastage",
     tabPass: "Gate Pass", tabDues: "Dues", tabSet: "Settings",

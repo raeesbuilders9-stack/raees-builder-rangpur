@@ -1,6 +1,6 @@
-# Raees Builder
+# Raees Builder Rangpur
 
-Website and installable app for **Raees Builder** - precast RCC roofing, free site estimation and professional installation.
+Website and installable app for **Raees Builder Rangpur** - precast RCC roofing, free site estimation and professional installation.
 
 Live: https://rafiqraeeskamboh-wq.github.io/raees-builder/
 
