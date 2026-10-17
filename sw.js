@@ -1,11 +1,11 @@
 /* Raees Builder Rangpur - service worker */
-const CACHE = 'raees-builder-v47';
+const CACHE = 'raees-rangpur-new-v1';
 
 const CORE_ASSETS = [
   './',
   './index.html',
   './style.css',
-  './sync.js',
+  './sync.js?v=fresh1',
   './script.js',
   './pwa.js',
   './logo.png',
