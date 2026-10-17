@@ -32,6 +32,18 @@
   var rawSet = localStorage.setItem.bind(localStorage);
   var rawDel = localStorage.removeItem.bind(localStorage);
 
+  /* Nayi website: is device par pehle se para hua purana data aik dafa saaf,
+     taake bill #1 se shuru ho aur purana data naye hisab mein upload na ho. */
+  if (localStorage.getItem("rbfresh-v1") !== "1") {
+    var oldKeys = [];
+    for (var fi = 0; fi < localStorage.length; fi++) {
+      var fk = localStorage.key(fi);
+      if (fk && (fk.indexOf("rb2:") === 0 || fk.indexOf("rb:") === 0) && fk !== "rb2:device-id") oldKeys.push(fk);
+    }
+    oldKeys.forEach(function (k) { rawDel(k); });
+    rawSet("rbfresh-v1", "1");
+  }
+
   var DEV = localStorage.getItem("rb2:device-id");
   if (!DEV) {
     DEV = Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -46,8 +58,12 @@
     if (!k || SKIP[k]) return false;
     return k.indexOf("rb2:") === 0 || k.indexOf("rb:") === 0;
   }
-  function toId(k) { return k.split(":").join("__"); }
-  function toKey(id) { return id.split("__").join(":"); }
+  /* NAYI WEBSITE: apna data "N__" se shuru hone wale docs mein, field "nv" mein.
+     Purani website sirf "v" field parhti hai, is liye ye docs us ko nazar nahi aate
+     aur purani website ka data yahan nahi aata. */
+  var PFX = "N__";
+  function toId(k) { return PFX + k.split(":").join("__"); }
+  function toKey(id) { return id.slice(PFX.length).split("__").join(":"); }
 
   /* ---------- chhoti si UI ---------- */
   var CARD = "max-width:400px;margin:40px auto;padding:24px;border-radius:14px;background:#1c1c1c;color:#f3ede4;font-family:system-ui,sans-serif;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.4)";
@@ -157,7 +173,7 @@
       timers[k] = setTimeout(function () {
         timers[k] = null;
         var v = localStorage.getItem(k);
-        col.doc(toId(k)).set({ v: v === null ? "" : v, dev: DEV, at: Date.now() })
+        col.doc(toId(k)).set({ nv: v === null ? "" : v, dev: DEV, at: Date.now() })
           .then(function () { note("Cloud pe mehfooz"); })
           .catch(function (err) { note("Cloud save fail: " + (err.code || "")); });
       }, 900);
@@ -170,7 +186,7 @@
         if (isShared(k)) keys.push(k);
       }
       keys.forEach(function (k) {
-        col.doc(toId(k)).set({ v: localStorage.getItem(k), dev: DEV, at: Date.now() });
+        col.doc(toId(k)).set({ nv: localStorage.getItem(k), dev: DEV, at: Date.now() });
       });
     }
 
@@ -183,16 +199,18 @@
       location.reload();
     }
 
-    col.onSnapshot(function (snap) {
+    var FPID = firebase.firestore.FieldPath.documentId();
+    col.where(FPID, ">=", PFX).where(FPID, "<", "N_`").onSnapshot(function (snap) {
       var changed = 0;
       snap.docChanges().forEach(function (ch) {
         if (ch.type === "removed") return;
         var d = ch.doc.data() || {};
         if (d.dev === DEV) return;
-        if (typeof d.v !== "string") return;
+        if (typeof d.nv !== "string") return;
+        if (ch.doc.id.indexOf(PFX) !== 0) return;
         var k = toKey(ch.doc.id);
-        if (localStorage.getItem(k) === d.v) return;
-        rawSet(k, d.v);
+        if (localStorage.getItem(k) === d.nv) return;
+        rawSet(k, d.nv);
         changed++;
       });
       if (first) {
